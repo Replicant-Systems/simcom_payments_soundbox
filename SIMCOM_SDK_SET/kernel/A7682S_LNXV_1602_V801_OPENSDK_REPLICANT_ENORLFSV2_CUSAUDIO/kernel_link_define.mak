@@ -1,0 +1,1 @@
+KERNEL_LINK_FILE := X:\simcom\cus_link_sct\\CraneLR_DS_4M_Ram_4M_Flash_XIP_CIPSRAM_Common_APP_512K_Opensdk_WALNUT.sct

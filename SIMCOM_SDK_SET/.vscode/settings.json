@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "a7680c_v801_gpio.h": "c",
+        "random": "c",
+        "simcom_common.h": "c",
+        "simcom_simcard.h": "c",
+        "uart_api.h": "c",
+        "simcom_debug.h": "c",
+        "stdio.h": "c",
+        "simcom_usb_vcom.h": "c",
+        "userspaceconfig.h": "c",
+        "simcom_network.h": "c",
+        "simcom_mqtts_client.h": "c",
+        "simcom_os.h": "c",
+        "simcom_gpio.h": "c",
+        "core_auth.h": "c",
+        "ratio": "c",
+        "simcom_uart.h": "c",
+        "simcom_file.h": "c"
+    }
+}

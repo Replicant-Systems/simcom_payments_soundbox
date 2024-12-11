@@ -1,0 +1,602 @@
+{
+  "name": "ASR1602_EVB",
+  "product": "arom-tiny",
+  "version": "0.6",
+  "keyAlg": "rsa",
+  "hashAlg": "sha256",
+  "secureBoot": false,
+  "firmwareGenerator": {
+    "name": "crane",
+    "call-max-download-size": "60KiB",
+    "flash-max-download-size": "1MiB",
+    "use-lzma-compression": true
+  },
+  "fota": ["system"],
+  "variants": [
+    {
+      "name": "ASR1602_02MB",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_02MB",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_UBIA",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_UBIA",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_02MB",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_GLOBAL",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_02MB_GLOBAL",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_GLOBAL_UBIA",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_UBIA",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_02MB_GLOBAL",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_ASR5311",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_02MB",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_ASR5311_UBIA",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE_UBIA",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_02MB",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_ASR5311_GLOBAL",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_02MB_GLOBAL",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_ASR5311_GLOBAL_UBIA",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE_UBIA",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_02MB_GLOBAL",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_ASR5311_GLOBAL_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_02MB_GLOBAL_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ZZCXNY",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_ZZCXNY",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_EP",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_EP",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_GZZX",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_GZZX",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_LARGENVM",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_LARGENVM",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_TTS",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_TTS",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ZTAC",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_ZTAC",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_SMS_04MB",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE",
+      "layout": "ASR1602_SMS_SINGLE_FLASH_LAYOUT_04MB",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ASR5311",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_04MB",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ASR5311_TTS",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_04MB_TTS",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ASR5311_LARGENVM",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_04MB_LARGENVM",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ASR5311_WHKC",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_04MB_WHKC",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ASR5311_ZTAC",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_04MB_ZTAC",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_02MB_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_FS_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_02MB_FS_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_CSSMS_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_NOCUSDATA_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_02MB_CSSMS_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_LINKWELL_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_02MB_LINKWELL_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_02MB_ASR5311_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_02MB_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_YAXON_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_APP_384K_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_YJ_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_YJ_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_TTS_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_TTS_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_APP_256K_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_APP_256K_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_APP_384K_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_APP_384K_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_JWZD_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_JWZD_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+        "name": "ASR1602_04MB_GTK_OPENSDK",
+        "version-bootrom": "2022.11.06",
+        "template": "ASR1602_TEMPLATE_OPENSDK",
+        "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_GTK_OPENSDK",
+        "flashes": [
+            {
+            "name": "qspi",
+            "port": "QSPI",
+            "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+            }
+        ]
+    },
+    {
+      "name": "ASR1602_04MB_ZM_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_ZM_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_YUNHAI_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_YUNHAI_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_HTTX_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_HTTX_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_WALNUT_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_WALNUT_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_CWXT_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_CWXT_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ASR5311_HTTX_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_ASR5311_HTTX_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ASR5311_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_04MB_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_IMSSMS_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_IMSSMS_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_UCVSIM",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_UCVSIM",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_UCVSIM",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
+      "name": "ASR1602_04MB_ASR5311_UCVSIM",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_ASR5311_TEMPLATE_UCVSIM",
+      "layout": "ASR1602_ASR5311_FLASH_LAYOUT_04MB_UCVSIM",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+        }
+      ]
+    }
+  ]
+}
