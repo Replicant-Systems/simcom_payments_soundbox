@@ -600,8 +600,6 @@ void GPIO_IntHandlerVplus (void)
         volume++;
         volume_changed=1;
     }
-    sAPI_GpioSetValue(11, 0);
-    sAPI_GpioSetValue(10, 0);
 }
 void GPIO_IntHandlerVminus(void)
 {
@@ -612,8 +610,6 @@ void GPIO_IntHandlerVminus(void)
         volume--;
         volume_changed=1;
     }
-    sAPI_GpioSetValue(11, 1);
-    sAPI_GpioSetValue(10, 1);
 }
 void GpioInit()
 {
@@ -878,6 +874,7 @@ void test_play_file(int mqttvalue)
 void sTask_Audio_taskProcesser(void* argv)
 {
     char NetResp[100] = {0};
+    unsigned int adc=0;
     sAPI_AudioSetVolume(volume);
     while(1)  
     {  
@@ -886,8 +883,33 @@ void sTask_Audio_taskProcesser(void* argv)
             sAPI_AudioSetVolume(volume);
             volume_changed=0;
         }
+        adc=sAPI_ReadAdc(2);
         sprintf(NetResp, "ADC %dmv\r\n",sAPI_ReadAdc(2));
         PrintfResp(NetResp);
+        if(adc>930)
+        {
+            sAPI_GpioSetValue(SC_MODULE_GPIO_12, 1);//led1
+            sAPI_GpioSetValue(11, 1);//led2
+            sAPI_GpioSetValue(10, 1);//led3
+        }
+        else if(adc>880)
+        {
+            sAPI_GpioSetValue(SC_MODULE_GPIO_12, 0);
+            sAPI_GpioSetValue(11, 1);
+            sAPI_GpioSetValue(10, 1);  
+        }
+        else if(adc>830)
+        {
+            sAPI_GpioSetValue(SC_MODULE_GPIO_12, 0);
+            sAPI_GpioSetValue(11, 0);
+            sAPI_GpioSetValue(10, 1); 
+        }
+        else
+        {
+            sAPI_GpioSetValue(SC_MODULE_GPIO_12, 0);
+            sAPI_GpioSetValue(11, 0);
+            sAPI_GpioSetValue(10, 0); 
+        }
         
         if(mqtt_received==1)
         {

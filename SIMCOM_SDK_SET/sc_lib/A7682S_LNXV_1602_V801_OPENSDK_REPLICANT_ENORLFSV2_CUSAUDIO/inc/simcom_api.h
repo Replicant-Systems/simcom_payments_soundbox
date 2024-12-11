@@ -36,7 +36,6 @@
 #include "simcom_wtd.h"
 #include "sal_netif.h"
 #include "simcom_wifi.h"
-#include "simcom_onewire.h"
 #include "simcom_file.h"
 #include "simcom_file_system.h"
 #include "simcom_auth_api.h"

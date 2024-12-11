@@ -1,7 +1,7 @@
 /*** 
  * @Author: yangkui.zhang
  * @Date: 2024-08-01 20:19:30
- * @LastEditTime: 2024-08-02 10:28:07
+ * @LastEditTime: 2024-11-28 10:56:25
  * @LastEditors: yangkui.zhang
  * @Description: 
  * @FilePath: \ASR1803S\simcom\userspace\sc_lib\inc\GPIO\A7602E_H_TAME_GPIO.h
@@ -14,9 +14,8 @@
 typedef enum
 {
 #ifndef WIFI_DISABLE
+    SC_MODULE_GPIO_04 = 4,     /*  pin 119, pad name: GPIO_04 */
     SC_MODULE_GPIO_05 = 5,     /*  pin 45, pad name: GPIO_05 */
-    SC_MODULE_GPIO_14 = 14,    /*  pin 51, pad name: GPIO_14 */
-    SC_MODULE_GPIO_21 = 21,    /*  pin 49, pad name: GPIO_21 */
     SC_MODULE_GPIO_24 = 24,    /*  pin 70, pad name: GPIO_24 */
     SC_MODULE_GPIO_25 = 25,    /*  pin 76, pad name: GPIO_25 */
     SC_MODULE_GPIO_26 = 26,    /*  pin 75, pad name: GPIO_26 */
@@ -30,16 +29,16 @@ typedef enum
     SC_MODULE_GPIO_01 = 1,     /*  pin 162, pad name: GPIO_01 */
     SC_MODULE_GPIO_02 = 2,     /*  pin 163, pad name: GPIO_02 */
     SC_MODULE_GPIO_03 = 3,     /*  pin 128, pad name: GPIO_03 */
+    SC_MODULE_GPIO_04 = 4,     /*  pin 119, pad name: GPIO_04 */
     SC_MODULE_GPIO_05 = 5,     /*  pin 45, pad name: GPIO_05 */
     SC_MODULE_GPIO_06 = 6,     /*  pin 161, pad name: GPIO_06 */
     SC_MODULE_GPIO_07 = 7,     /*  pin 160, pad name: GPIO_07 */
     SC_MODULE_GPIO_12 = 12,    /*  pin 33, pad name: GPIO_12 */
-    SC_MODULE_GPIO_14 = 14,    /*  pin 51, pad name: GPIO_14 */
     SC_MODULE_GPIO_15 = 15,    /*  pin 126, pad name: GPIO_15 */
     SC_MODULE_GPIO_16 = 16,    /*  pin 120, pad name: GPIO_16 */
     SC_MODULE_GPIO_17 = 17,    /*  pin 125, pad name: GPIO_17 */
     SC_MODULE_GPIO_18 = 18,    /*  pin 129, pad name: GPIO_18 */
-    SC_MODULE_GPIO_21 = 21,    /*  pin 49, pad name: GPIO_21 */
+    SC_MODULE_GPIO_20 = 20,    /*  pin 34, pad name: GPIO_20 */
     SC_MODULE_GPIO_24 = 24,    /*  pin 70, pad name: GPIO_24 */
     SC_MODULE_GPIO_31 = 31,    /*  pin 67, pad name: GPIO_31 */
     SC_MODULE_GPIO_32 = 32,    /*  pin 66, pad name: GPIO_32 */
@@ -52,7 +51,9 @@ typedef enum
     SC_MODULE_GPIO_58 = 58,    /*  pin 29, pad name: GPIO_58 */
     SC_MODULE_GPIO_59 = 59,    /*  pin 32, pad name: GPIO_59 */
     SC_MODULE_GPIO_99 = 99,    /*  pin 16, pad name: GPIO_99 */
-    SC_MODULE_GPIO_125 = 125,    /*  pin 115, pad name: GPIO_125 */
+    SC_MODULE_GPIO_122 = 122,  /*  pin 121, pad name: GPIO_122 */
+    SC_MODULE_GPIO_125 = 125,  /*  pin 115, pad name: GPIO_125 */
+    SC_MODULE_GPIO_126 = 126,  /*  pin 114, pad name: GPIO_126 */
 #endif
 
     SC_MODULE_GPIO_MAX = 128,

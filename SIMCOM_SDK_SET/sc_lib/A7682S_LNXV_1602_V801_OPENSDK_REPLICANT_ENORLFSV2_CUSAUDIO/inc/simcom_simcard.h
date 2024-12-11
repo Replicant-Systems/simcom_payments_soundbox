@@ -192,7 +192,8 @@ SC_simcard_err_e sAPI_StkService(scStkOpt opt,char *data,StkResult *output);
 /*Simcom xiaoshuang.mou add api for *SELECTSIMSLOT A7678-22583 @20241106 begin*/
 #ifdef SINGLE_SIM
 SC_simcard_err_e sAPI_SimcardGetSlot(UINT8* slotId);
-SC_simcard_err_e sAPI_SimcardSetSlot(UINT8 slotId, UINT8 saveFlag); //Simcom xiaoshuang.mou modify for A7678-22832 @20241119
+SC_simcard_err_e sAPI_SimcardSetSlot(UINT8 slotId);
+SC_simcard_err_e sAPI_SimcardSetSlotWithSave(UINT8 slotId, UINT8 saveFlag);
 extern UINT8 gSimSlot;
 #endif
 /*Simcom xiaoshuang.mou add api for *SELECTSIMSLOT A7678-22583 @20241106 end*/

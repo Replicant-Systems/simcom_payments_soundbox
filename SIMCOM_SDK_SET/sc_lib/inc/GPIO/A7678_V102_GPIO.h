@@ -9,7 +9,7 @@ typedef enum
     SC_MODULE_GPIO_03 = 54,  /*  pin7, pad name: GPIO_03 */
     SC_MODULE_GPIO_04 = 53,  /*  pin8, pad name: GPIO_04  */
     SC_MODULE_GPIO_05 = 120, /*  pin19, pad name: GPIO_05  */
-#if (defined CUS_TOPFLY) || (defined A7672E_V201)
+#if (defined CUS_TOPFLY) || (defined A7672E_V201) || (defined CUS_BSJ)
     SC_MODULE_GPIO_06 = 6,   /*  pin20, pad name: GPIO_06/MK_IN_3  */
 #endif
     SC_MODULE_GPIO_07 = 7,   /*  pin21, pad name: GPIO_07/MK_OUT_3  */

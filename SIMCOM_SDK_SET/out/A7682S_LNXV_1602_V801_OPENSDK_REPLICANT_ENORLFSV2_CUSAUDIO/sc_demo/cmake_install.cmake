@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/sc_demo/V1
+# Install script for directory: C:/Users/USER/Downloads/SIMCOM_SDK_SET/sc_demo/V1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
 endif()
 

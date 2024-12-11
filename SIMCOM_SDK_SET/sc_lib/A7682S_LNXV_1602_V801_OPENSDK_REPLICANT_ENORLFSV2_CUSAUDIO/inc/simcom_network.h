@@ -62,6 +62,7 @@ typedef struct SCciMmSigNormalQualityInfo_struct {
     UINT8       Rssi; 
     UINT8       Ber;
 } SCciMmSigNormalQualityInfo;
+
 typedef struct{
     char networkmode[40];
     char Mnc_Mcc[20];
@@ -264,9 +265,11 @@ unsigned int sAPI_NetworkTestCops(char* pCops);
 unsigned int sAPI_NetworkGetCops(char* pCops);
 unsigned int sAPI_NetworkSetCops(int modeVal,int formatVal,char *networkOperator,int accTchVal);
 unsigned int sAPI_NetworkGetCgdcont(SCApnParm* pCgdcont);
+unsigned int sAPI_NetworkGetCgdcontByCid(int cid, SCApnParm *pCgdcont);
 unsigned int sAPI_NetworkSetCgdcont(int primCid,char *type,char *APNstr);
 unsigned int sAPI_NetworkGetDNSAddr(int cid, SCDNSAddr *pDnsAddr);
 unsigned int sAPI_NetworkGetCgact(SCAPNact* pCgact);
+unsigned int sAPI_NetworkGetCgactByCid(int cid, SCAPNact *pCgact);
 unsigned int sAPI_NetworkSetCgact(int pdpState,int cid);
 unsigned int sAPI_NetworkGetCgatt(int* pCgatt);
 unsigned int sAPI_NetworkSetCgatt(int CgattValue);

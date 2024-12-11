@@ -31,6 +31,7 @@
 #cmakedefine HAS_DEMO_CAM
 #cmakedefine HAS_DEMO_SYS
 #cmakedefine HAS_DEMO_EXFLASHMOUNTFS
+#cmakedefine HAS_DEMO_ONEWIRE
 
 // modem
 #cmakedefine HAS_DEMO_NETWORK
@@ -71,6 +72,7 @@
 #cmakedefine HAS_SM2
 #cmakedefine HAS_CJSON
 #cmakedefine HAS_MBEDTLS
+#cmakedefine HAS_CRYPTO
 
 
 // custom switch

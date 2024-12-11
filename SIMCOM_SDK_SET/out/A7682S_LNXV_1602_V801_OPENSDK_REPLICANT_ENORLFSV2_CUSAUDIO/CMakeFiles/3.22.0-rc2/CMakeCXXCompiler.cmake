@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-g++.exe")
+set(CMAKE_CXX_COMPILER "C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-g++.exe")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_COMPILER_VERSION "9.2.1")
@@ -22,11 +22,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-ar.exe")
-set(CMAKE_CXX_COMPILER_AR "C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ar.exe")
-set(CMAKE_RANLIB "C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib.exe")
-set(CMAKE_CXX_COMPILER_RANLIB "C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib.exe")
-set(CMAKE_LINKER "C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-ld.exe")
+set(CMAKE_AR "C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-ar.exe")
+set(CMAKE_CXX_COMPILER_AR "C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ar.exe")
+set(CMAKE_RANLIB "C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib.exe")
+set(CMAKE_CXX_COMPILER_RANLIB "C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/bin/arm-none-eabi-ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
@@ -77,7 +77,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/arm-none-eabi/include/c++/9.2.1;C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/arm-none-eabi/include/c++/9.2.1/arm-none-eabi/thumb/v7/nofp;C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/arm-none-eabi/include/c++/9.2.1/backward;C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/9.2.1/include;C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/9.2.1/include-fixed;C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/arm-none-eabi/include")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/arm-none-eabi/include/c++/9.2.1;C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/arm-none-eabi/include/c++/9.2.1/arm-none-eabi/thumb/v7/nofp;C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/arm-none-eabi/include/c++/9.2.1/backward;C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/9.2.1/include;C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/9.2.1/include-fixed;C:/Users/USER/Downloads/SIMCOM_SDK_SET/tools/win32/cross_tool/gcc-arm-none-eabi/arm-none-eabi/include")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "")
 set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

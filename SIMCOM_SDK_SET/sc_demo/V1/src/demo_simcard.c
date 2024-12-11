@@ -1328,7 +1328,11 @@ exit:
 SC_simcard_err_e SimcardSlotDemo()
 {
     sAPI_Debug("[%s] Enter", __func__);
+#ifndef SC_SIMSLOT_DEMO_160X_MASTER
     char *note = "\r\nPlease select:\r\n0:Get Current Slot\r\n1:Set Slot\r\n";  
+#else
+    char *note = "\r\nPlease select:\r\n0:Get Current Slot\r\n1:Set Slot\r\n2:Set Slot With SaveFlag\r\n";  
+#endif
     PrintfResp(note);
 
     char rsp_buff[100] = {0};
@@ -1361,15 +1365,7 @@ SC_simcard_err_e SimcardSlotDemo()
             sAPI_Debug("[%s] SetSlot", __func__);
             PrintfResp("\r\nPlease input index\r\n0: slot0\r\n1: slot1\r\n");
             uint8_t slot = UartReadValue();
-#ifdef SC_SIMSLOT_DEMO_160X_MASTER
-            /*Simcom xiaoshuang.mou.add for A7678-22832 @20241119 begin*/
-            PrintfResp("\r\nSave?\r\n0: save\r\n1: not save\r\n"); 
-            uint8_t save = UartReadValue();
-            ret = sAPI_SimcardSetSlot(slot, save);
-            /*Simcom xiaoshuang.mou.add for A7678-22832 @20241119 end*/
-#else
             ret = sAPI_SimcardSetSlot(slot);
-#endif
             if (ret == SC_SIM_RETURN_SUCCESS)
             {
                 sAPI_Debug("[%s] SetSlot Success", __func__);
@@ -1381,6 +1377,27 @@ SC_simcard_err_e SimcardSlotDemo()
                 snprintf(rsp_buff, resp_buff_len, "\r\nSimcardSetSlot FIAL!\r\n");
             } 
         }break;
+#ifdef SC_SIMSLOT_DEMO_160X_MASTER
+        case 2:
+        {
+            sAPI_Debug("[%s] SetSlot", __func__);
+            PrintfResp("\r\nPlease input index\r\n0: slot0\r\n1: slot1\r\n");
+            uint8_t slot = UartReadValue();
+            PrintfResp("\r\nPlease input index\r\n0: save\r\n1: not save\r\n");
+            uint8_t save = UartReadValue();
+            ret = sAPI_SimcardSetSlotWithSave(slot,save);
+            if (ret == SC_SIM_RETURN_SUCCESS)
+            {
+                sAPI_Debug("[%s] SetSlot Success", __func__);
+                snprintf(rsp_buff, resp_buff_len, "\r\nSimcardSetSlot SUCCESS\r\n");
+            }
+            else
+            {
+                sAPI_Debug("[%s] SetSlot Fail", __func__);
+                snprintf(rsp_buff, resp_buff_len, "\r\nSimcardSetSlot FIAL!\r\n");
+            } 
+        }break;
+#endif
         default:{
             snprintf(rsp_buff,resp_buff_len,"\r\nopt error, Set failed,\r\n");
             break;

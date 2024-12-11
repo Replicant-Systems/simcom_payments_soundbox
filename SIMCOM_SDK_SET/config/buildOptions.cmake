@@ -84,6 +84,11 @@ if ((EXISTS ${CMAKE_SOURCE_DIR}/sc_lib/${SCMODULE}/inc/simcom_exfsmount.h)
     option(HAS_DEMO_EXFLASHMOUNTFS "build exflashmountfs demo" ON)
 endif()
 
+if ((EXISTS ${CMAKE_SOURCE_DIR}/sc_lib/${SCMODULE}/inc/simcom_onewire.h)
+    AND CONFIG_HAS_DEMO_ONEWIRE)
+    option(HAS_DEMO_ONEWIRE "build one_wire demo" ON)
+endif()
+
 #########################
 # modem
 #########################
@@ -228,6 +233,10 @@ endif()
 if(DEFINED WALNUT)
 option(HAS_MBEDTLS "build mbedtls demo" ON)
 endif(DEFINED WALNUT)
+
+if ((EXISTS ${CMAKE_SOURCE_DIR}/sc_lib/${SCMODULE}/inc/pl_crypto.h))
+    option(HAS_CRYPTO "build crypto demo" ON)
+endif()
 
 #########################
 # custom switch

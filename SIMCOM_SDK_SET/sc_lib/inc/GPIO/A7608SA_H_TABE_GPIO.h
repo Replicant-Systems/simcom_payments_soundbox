@@ -17,6 +17,11 @@ typedef enum
     SC_MODULE_GPIO_18 = 18,       /*  pin 129,   pad name: GPIO_18   */
     SC_MODULE_GPIO_21 = 21,       /*  pin 49,    pad name: GPIO_21   */
     SC_MODULE_GPIO_24 = 24,       /*  pin 70,    pad name: GPIO_24   */
+#ifdef CUS_HX
+    SC_MODULE_GPIO_25 = 25,       /*  pin 76,    pad name: GPIO_25   */
+    SC_MODULE_GPIO_26 = 26,       /*  pin 75,    pad name: GPIO_26   */
+    SC_MODULE_GPIO_28 = 28,       /*  pin 74,    pad name: GPIO_28   */
+#endif
     SC_MODULE_GPIO_31 = 31,       /*  pin 67,    pad name: GPIO_31   */
     SC_MODULE_GPIO_32 = 32,       /*  pin 66,    pad name: GPIO_32   */
     SC_MODULE_GPIO_48 = 48,       /*  pin 31,    pad name: GPIO_48   */

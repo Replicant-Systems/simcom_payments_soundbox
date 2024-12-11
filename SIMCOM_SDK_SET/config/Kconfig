@@ -108,6 +108,10 @@ config HAS_DEMO_SYS
 config HAS_DEMO_EXFLASHMOUNTFS
     bool "BUILD EXFLASHMOUNTFS"
     default y
+
+config HAS_DEMO_ONEWIRE
+    bool "BUILD ONEWIRE"
+    default y
 endmenu
 
 menu "Demo for modem"

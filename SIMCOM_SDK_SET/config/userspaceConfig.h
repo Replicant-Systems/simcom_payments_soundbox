@@ -31,6 +31,7 @@
 /* #undef HAS_DEMO_CAM */
 #define HAS_DEMO_SYS
 /* #undef HAS_DEMO_EXFLASHMOUNTFS */
+/* #undef HAS_DEMO_ONEWIRE */
 
 // modem
 #define HAS_DEMO_NETWORK
@@ -71,6 +72,7 @@
 /* #undef HAS_SM2 */
 #define HAS_CJSON
 /* #undef HAS_MBEDTLS */
+/* #undef HAS_CRYPTO */
 
 
 // custom switch

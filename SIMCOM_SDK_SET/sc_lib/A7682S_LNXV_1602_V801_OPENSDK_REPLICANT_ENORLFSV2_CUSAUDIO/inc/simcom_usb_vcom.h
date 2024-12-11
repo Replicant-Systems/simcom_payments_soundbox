@@ -143,6 +143,7 @@ typedef void (*SC_Usb_CallbackEX)(int len, void *reserve);
 int sAPI_UsbVcomRegisterCallbackEX(SC_Usb_CallbackEX cb, void *reserve);
 int sAPI_UsbVcomRegisterCallback(SC_Usb_Callback cb);
 int sAPI_ControlRndisFunction(int mode);
+void sAPI_UsbSetEnumStr(unsigned char* data);
 
 
 #endif

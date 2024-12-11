@@ -81,6 +81,9 @@ if(HAS_DEMO_EXFLASHMOUNTFS)
     list(APPEND sc_demo_src ./src/demo_exfs.c)
 endif()
 
+if(HAS_DEMO_ONEWIRE)
+    list(APPEND sc_demo_src ./src/demo_onewire.c)
+endif()
 #########################
 #         modem
 #########################
@@ -210,6 +213,10 @@ endif(HAS_CJSON)
 if(HAS_MBEDTLS)
     list(APPEND sc_demo_src ./src/demo_mbedtls.c)
 endif(HAS_MBEDTLS)
+
+if(HAS_CRYPTO)
+    list(APPEND sc_demo_src ./src/demo_crypto.c)
+endif(HAS_CRYPTO)
 
 # Add the static library
 add_library(sc_demo STATIC ${sc_demo_src})

@@ -871,6 +871,11 @@ static int all_gpio[] =
     SC_MODULE_GPIO_18,
     SC_MODULE_GPIO_21,
     SC_MODULE_GPIO_24,
+#ifdef CUS_HX
+    SC_MODULE_GPIO_25,
+    SC_MODULE_GPIO_26,
+    SC_MODULE_GPIO_28,
+#endif
     SC_MODULE_GPIO_31,
     SC_MODULE_GPIO_32,
     SC_MODULE_GPIO_48,

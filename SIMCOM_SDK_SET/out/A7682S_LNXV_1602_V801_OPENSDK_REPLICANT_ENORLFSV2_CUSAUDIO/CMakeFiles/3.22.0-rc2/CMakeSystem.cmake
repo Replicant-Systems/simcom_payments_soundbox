@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Windows")
 set(CMAKE_HOST_SYSTEM_VERSION "10.0.19045")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
-include("C:/Users/USER/Desktop/Simcom/23144B01V01A7682M5A_SDK_CUS_REPLICANT_241121/SIMCOM_SDK_SET/config/ToolChain.cmake")
+include("C:/Users/USER/Downloads/SIMCOM_SDK_SET/config/ToolChain.cmake")
 
 set(CMAKE_SYSTEM "Generic")
 set(CMAKE_SYSTEM_NAME "Generic")

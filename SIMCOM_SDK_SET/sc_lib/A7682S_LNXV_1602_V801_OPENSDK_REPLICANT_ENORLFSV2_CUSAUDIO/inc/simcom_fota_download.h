@@ -1,6 +1,11 @@
 #ifndef __SIMCOM_FOTA_DOWNLOAD_H__
 #define __SIMCOM_FOTA_DOWNLOAD_H__
 
+#ifdef CUS_UBLOX
+#define AT_NAME_CFOTA "+UFOTAUPD"
+#else
+#define AT_NAME_CFOTA "+CFOTA"
+#endif
 
 #if 0 
 #define SC_FOTA_MAX_STRING_LEN 128

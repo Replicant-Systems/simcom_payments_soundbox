@@ -72,13 +72,18 @@ endif
 
 #Distinguish GPS firm
 GPS_FIRM := NULL
-ifneq ($(word 2,$(subst _, ,$(SC_MODULE_FULL)))$(word 2,$(subst _, ,$(SC_MODULE_FULL))),$(patsubst F%,,$(word 2,$(subst _, ,$(SC_MODULE_FULL))))$(patsubst M%,,$(word 2,$(subst _, ,$(SC_MODULE_FULL)))))
+ifneq ($(word 2,$(subst _, ,$(SC_MODULE_FULL)))$(word 2,$(subst _, ,$(SC_MODULE_FULL)))$(word 2,$(subst _, ,$(SC_MODULE_FULL))),$(patsubst F%,,$(word 2,$(subst _, ,$(SC_MODULE_FULL))))$(patsubst M%,,$(word 2,$(subst _, ,$(SC_MODULE_FULL))))$(patsubst J%,,$(word 2,$(subst _, ,$(SC_MODULE_FULL)))))
 	#special product type
 	ifeq (,$(findstring _A7672E_FASE_1603_V201_,_$(SC_MODULE_FULL)_)$(findstring _A7670U_MAMS_1606_V201_,_$(SC_MODULE_FULL)_)$(findstring _A7670NA_MAMS_1606_V201_,_$(SC_MODULE_FULL)_)$(findstring _A7670G_MAMS_1606_V201_,_$(SC_MODULE_FULL)_)$(findstring _A7670E_MAMS_1606_V201_,_$(SC_MODULE_FULL)_)$(findstring _A7670SA_MAMS_1606_V201_,_$(SC_MODULE_FULL)_)$(findstring _A7670G_MNMY_1602_UB_V101_,_$(SC_MODULE_FULL)_)$(findstring _A7672SA_FASE_1603_V201_,_$(SC_MODULE_FULL)_)$(findstring _A7670E_MAMV_1606_V201_,_$(SC_MODULE_FULL)_)$(findstring _A7670SA_MAMV_1606_V201_,_$(SC_MODULE_FULL)_)$(findstring _A7670NA_MNMY_1602_UB_V101_,_$(SC_MODULE_FULL)_)$(findstring _A7670SA_MNMV_1602_V101_,_$(SC_MODULE_FULL)_)$(findstring _A7670E_MNMV_1602_V101_,_$(SC_MODULE_FULL)_)$(findstring _A7600C1_MNXY_1602_V501_,_$(SC_MODULE_FULL)_))
-		ifneq (,$(findstring A7670,$(SC_MODULE_FULL))$(findstring A7672,$(SC_MODULE_FULL))$(findstring A7677,$(SC_MODULE_FULL))$(findstring A7605,$(SC_MODULE_FULL)))
+		ifneq (,$(findstring _1605_,_$(SC_MODULE_FULL)_)$(findstring _A7672E_MASA_1603_V301_,_$(SC_MODULE_FULL)_))
+			ifneq ($(word 2,$(subst _, ,$(SC_MODULE_FULL))),$(patsubst M%,,$(word 2,$(subst _, ,$(SC_MODULE_FULL)))))
+				GPS_FIRM := GPS_CC1161W
+			else
+				GPS_FIRM := GPS_CC1177W
+			endif
+
+		else ifneq (,$(findstring A7670,$(SC_MODULE_FULL))$(findstring A7672,$(SC_MODULE_FULL))$(findstring A7677,$(SC_MODULE_FULL))$(findstring A7605,$(SC_MODULE_FULL)))
 			GPS_FIRM := GPS_UC6228
-		else ifneq (,$(findstring _1605_,_$(SC_MODULE_FULL)_))
-			GPS_FIRM := GPS_UC1161W
 		else
 			GPS_FIRM := GPS_ASR5311
 		endif
@@ -86,7 +91,7 @@ ifneq ($(word 2,$(subst _, ,$(SC_MODULE_FULL)))$(word 2,$(subst _, ,$(SC_MODULE_
 		GPS_FIRM := GPS_ASR5311
 	endif
 endif
-#GPS FOR ASR5311 AND UC6228 ADD
+#GPS FOR ASR5311, UC6228, CC1161W, CC1177W ADD
 ifneq (NULL,$(GPS_FIRM))
 	ifneq (,$(findstring _UC6228_,_${GPS_FIRM}_))
 		#UC6228 dynamic fw from flash, it is make jason which have fw partition
@@ -112,8 +117,10 @@ ifneq (NULL,$(GPS_FIRM))
 		ifeq (_16MB,$(FLASH_TARGET_SIZE))
 			FLASH_TARGET_HD := $(FLASH_TARGET_HD)_UC6228
 		endif
-	else ifneq (,$(findstring _UC1161W_,_${GPS_FIRM}_))
-		FLASH_TARGET_HD := $(FLASH_TARGET_HD)_UC1161W
+	else ifneq (,$(findstring _CC1161W_,_${GPS_FIRM}_))
+		FLASH_TARGET_HD := $(FLASH_TARGET_HD)_CC1161W
+	else ifneq (,$(findstring _CC1177W_,_${GPS_FIRM}_))
+		FLASH_TARGET_HD := $(FLASH_TARGET_HD)_CC1161W
 	else
 		FLASH_TARGET_HD := $(FLASH_TARGET_HD)_ASR5311
 	endif
@@ -233,6 +240,10 @@ else ifneq (,$(findstring _WHKC_,_$(SC_MODULE_FULL)_))
     ifneq (,$(findstring _A7680C_MNNV_,_${SC_MODULE_FULL}_))
         FLASH_TARGET_CUSTOM := _WHKC
     endif
+else ifneq (,$(findstring _ULTRASTAR_,_$(SC_MODULE_FULL)_))
+    ifneq (,$(findstring _A7682EC_LASA_,_${SC_MODULE_FULL}_))
+        FLASH_TARGET_CUSTOM := _ULTRASTAR
+    endif
 else
 	FLASH_TARGET_CUSTOM :=
 endif
@@ -242,6 +253,14 @@ endif
 ifneq (,$(findstring _OPENSDK,$(SC_MODULE_BASE)))
 	ifneq (,$(findstring _IMSSMS_,_$(SC_MODULE_FULL)_))
 		FLASH_TARGET_CUSTOM := _IMSSMS
+	endif
+
+	ifneq (,$(findstring _1602_,_${SC_MODULE_FULL}_))
+		ifeq (TRUE,$(patsubst %V,TRUE,$(word 2,$(subst _, ,$(SC_MODULE_FULL)))))
+			ifneq (,$(findstring _FULLFOTA_,_$(SC_MODULE_FULL)_))
+					FLASH_TARGET_CUSTOM := _FULLFOTA
+			endif
+		endif
 	endif
 
 	ifneq (,$(findstring _1602_,_${SC_MODULE_FULL}_))
@@ -358,6 +377,10 @@ ifneq (,$(findstring _OPENSDK,$(SC_MODULE_BASE)))
 			ifneq (,$(findstring _CZJ_,_${SC_MODULE_FULL}_))
 				FLASH_TARGET_CUSTOM := _CZJ
 			endif
+
+			ifneq (,$(findstring _WWKJ_,_${SC_MODULE_FULL}_))
+				FLASH_TARGET_CUSTOM := _WWKJ
+			endif
 		endif
 	endif
 	ifneq (,$(findstring _CWXT_,_$(SC_MODULE_FULL)_))
@@ -387,6 +410,16 @@ ifneq (,$(findstring _OPENSDK,$(SC_MODULE_BASE)))
 		ifneq (,$(findstring _A7677S_FAXV_,_$(SC_MODULE_FULL)_))
 				FLASH_TARGET_CUSTOM := _ECOZEN
 		endif
+	endif
+
+	ifneq (,$(findstring _XTL_,_$(SC_MODULE_FULL)_))
+		ifneq (,$(findstring _A7670SA_LASA_,_$(SC_MODULE_FULL)_)$(findstring _A7670E_LASA_,_$(SC_MODULE_FULL)_))
+				FLASH_TARGET_CUSTOM := _XTL
+		endif
+	endif
+
+	ifneq (,$(findstring _KWHMETER_,_$(SC_MODULE_FULL)_))
+		FLASH_TARGET_CUSTOM := _KWHMETER
 	endif
 endif
 

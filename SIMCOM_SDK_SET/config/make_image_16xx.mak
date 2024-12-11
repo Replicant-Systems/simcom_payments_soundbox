@@ -180,23 +180,29 @@ endif
 #     GPS PATH
 ########################################
 ifneq (,$(findstring _UC6228_,_${GPS_FIRM}_))
-GPS_OUT_NAME1 := gps_bootloader.bin
-GPS_OUT_NAME2 := gps_firmware.bin
-
-ifneq (,$(findstring _DOMESTIC_,_$(MODULE_TARGET_TYPE)_))
-	GPS_PRESET := domestic
-else
-	GPS_PRESET := foreign
-endif
-
-GPS_SRC_PATH := ${PREBUILD_DIR}/GPS/UC6228/${GPS_PRESET}
+	GPS_OUT_NAME1 := gps_bootloader.bin
+	GPS_OUT_NAME2 := gps_firmware.bin
+	ifneq (,$(findstring _DOMESTIC_,_$(MODULE_TARGET_TYPE)_))
+		GPS_PRESET := domestic
+	else
+		GPS_PRESET := foreign
+	endif
+	GPS_SRC_PATH := ${PREBUILD_DIR}/GPS/UC6228/${GPS_PRESET}
 else ifneq (,$(findstring _ASR5311_,_${GPS_FIRM}_))
-GPS_OUT_NAME := jacana_fw.bin
-ifneq (,$(findstring _1607_,_${SC_MODULE_BASE}_))
-GPS_SRC_PATH := ${PREBUILD_DIR}/GPS/ASR1607_GNSS
-else
-GPS_SRC_PATH := ${PREBUILD_DIR}/GPS/ASR5311_GNSS
-endif
+	GPS_OUT_NAME := jacana_fw.bin
+	ifneq (,$(findstring _1607_,_${SC_MODULE_BASE}_))
+		GPS_SRC_PATH := ${PREBUILD_DIR}/GPS/ASR1607_GNSS
+	else
+		GPS_SRC_PATH := ${PREBUILD_DIR}/GPS/ASR5311_GNSS
+	endif
+else ifneq (,$(findstring _CC1161W_,_${GPS_FIRM}_))
+	GPS_OUT_NAME1 := gps_bootloader.bin
+	GPS_OUT_NAME2 := gps_firmware.bin
+	GPS_SRC_PATH := ${PREBUILD_DIR}/GPS/CC1161W
+else ifneq (,$(findstring _CC1177W_,_${GPS_FIRM}_))
+	GPS_OUT_NAME1 := gps_bootloader.bin
+	GPS_OUT_NAME2 := gps_firmware.bin
+	GPS_SRC_PATH := ${PREBUILD_DIR}/GPS/CC1177W
 endif
 ##########################################
 #     DSP PATH
@@ -291,6 +297,12 @@ BOOT33_SRC_PATH := ${PREBUILD_DIR}/boot33/${ASR_MODEL}/SingleSIM
 endif
 endif
 
+ifneq (,$(findstring _1602_,_${SC_MODULE_BASE}_))
+ifneq (,$(findstring _FULLFOTA_,_$(SC_USR_OPT)_))
+BOOT33_SRC_PATH := ${PREBUILD_DIR}/boot33/${ASR_MODEL}/fullfota
+endif
+endif
+
 define boot33_usr_opt_process
 ifeq ($(1),$(notdir $(wildcard ${BOOT33_SRC_PATH}/$(1))))
 BOOT33_SRC_PATH := ${BOOT33_SRC_PATH}/$(1)
@@ -349,7 +361,11 @@ ifneq (,$(findstring _1606_,_${SC_MODULE_BASE}_))
 			endif
 		else ifneq (,$(findstring A7670C,${SC_MODULE}))
 			ifneq (,$(findstring _V701,_$(SC_HD_OPT)_)$(findstring _V702,_$(SC_HD_OPT)_)$(findstring _V703,_$(SC_HD_OPT)_))
-				UPDATER_SRC_PATH := ${PREBUILD_DIR}/updater/${ASR_MODEL}/NOUPDT/UART4
+				ifneq (,$(findstring _UBLOX_,_$(SC_MODULE_FULL)_))
+					UPDATER_SRC_PATH := ${PREBUILD_DIR}/updater/${ASR_MODEL}/NOUPDT/UART4_UBLOX
+				else
+					UPDATER_SRC_PATH := ${PREBUILD_DIR}/updater/${ASR_MODEL}/NOUPDT/UART4
+				endif
 			else
 				UPDATER_SRC_PATH := ${PREBUILD_DIR}/updater/${ASR_MODEL}/NOUPDT/UART2
 			endif
@@ -378,7 +394,11 @@ else ifneq (,$(findstring _1603_,_${SC_MODULE_BASE}_))
 	endif
 #1602&1607
 else
-	UPDATER_SRC_PATH := ${PREBUILD_DIR}/updater/${ASR_MODEL}/NOUPDT
+	ifneq (,$(findstring _FULLFOTA_,_$(SC_USR_OPT)_))
+		UPDATER_SRC_PATH := ${PREBUILD_DIR}/updater/${ASR_MODEL}/fullfota
+	else
+		UPDATER_SRC_PATH := ${PREBUILD_DIR}/updater/${ASR_MODEL}/NOUPDT
+	endif
 endif
 
 define updater_usr_opt_process
@@ -466,7 +486,7 @@ endif
 
 ifneq (,$(findstring _ASR5311_,_${GPS_FIRM}_))
 source: ${ABOOT_IMAGES_OUT_DIR}/${GPS_OUT_NAME}
-else ifneq (,$(findstring _UC6228_,_${GPS_FIRM}_))
+else ifneq (,$(findstring _UC6228_,_${GPS_FIRM}_)$(findstring _CC1161W_,_${GPS_FIRM}_)$(findstring _CC1177W_,_${GPS_FIRM}_))
 source: ${ABOOT_IMAGES_OUT_DIR}/${GPS_OUT_NAME1}
 endif
 
@@ -555,7 +575,7 @@ ${ABOOT_IMAGES_OUT_DIR}/${NVM_OUT_NAME}:${NVM_SRC_PATH} ${ABOOT_OUT_DIR}
 ${ABOOT_IMAGES_OUT_DIR}/${DSP_SRC_NAME}:${DSP_SRC_PATH}
 	${COPY_FILE} ${COPYARG_FILE} $(subst ${BAD_SLASH},${GOOD_SLASH},$</${DSP_SRC_NAME}) $(subst ${BAD_SLASH},${GOOD_SLASH},$(dir $@))
 
-ifneq (,$(findstring _UC6228_,_${GPS_FIRM}_))
+ifneq (,$(findstring _UC6228_,_${GPS_FIRM}_)$(findstring _CC1161W_,_${GPS_FIRM}_)$(findstring _CC1177W_,_${GPS_FIRM}_))
 ${ABOOT_IMAGES_OUT_DIR}/${GPS_OUT_NAME1}:${GPS_SRC_PATH}
 	${COPY_FILE} ${COPYARG_FILE} $(subst ${BAD_SLASH},${GOOD_SLASH},$</${GPS_OUT_NAME1}) $(subst ${BAD_SLASH},${GOOD_SLASH},$(dir $@))
 	${COPY_FILE} ${COPYARG_FILE} $(subst ${BAD_SLASH},${GOOD_SLASH},$</${GPS_OUT_NAME2}) $(subst ${BAD_SLASH},${GOOD_SLASH},$(dir $@))

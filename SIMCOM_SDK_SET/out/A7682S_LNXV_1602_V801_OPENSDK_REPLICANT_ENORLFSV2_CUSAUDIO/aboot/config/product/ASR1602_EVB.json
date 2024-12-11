@@ -66,6 +66,19 @@
       ]
     },
     {
+      "name": "ASR1602_02MB_GLOBAL_OPENSDK",
+      "version-bootrom": "2022.11.06",
+      "template": "ASR1602_TEMPLATE_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_02MB_GLOBAL_OPENSDK",
+      "flashes": [
+        {
+          "name": "qspi",
+          "port": "QSPI",
+          "flash": "QSPI_NOR_2MB_B64KB_S4KB_P256"
+        }
+      ]
+    },
+    {
       "name": "ASR1602_02MB_ASR5311",
       "version-bootrom": "2022.11.06",
       "template": "ASR1602_ASR5311_TEMPLATE",
@@ -381,7 +394,7 @@
       "name": "ASR1602_04MB_YAXON_OPENSDK",
       "version-bootrom": "2022.11.06",
       "template": "ASR1602_TEMPLATE_OPENSDK",
-      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_APP_384K_OPENSDK",
+      "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_YAXON_OPENSDK",
       "flashes": [
         {
           "name": "qspi",
@@ -403,6 +416,19 @@
         }
       ]
     },
+    {
+        "name": "ASR1602_04MB_FULLFOTA_OPENSDK",
+        "version-bootrom": "2022.11.06",
+        "template": "ASR1602_TEMPLATE_FULLFOTA_OPENSDK",
+        "layout": "ASR1602_SINGLE_FLASH_LAYOUT_04MB_FULLFOTA_OPENSDK",
+        "flashes": [
+          {
+            "name": "qspi",
+            "port": "QSPI",
+            "flash": "QSPI_NOR_4MB_B64KB_S4KB_P256"
+          }
+        ]
+      },
     {
       "name": "ASR1602_04MB_TTS_OPENSDK",
       "version-bootrom": "2022.11.06",

@@ -1,10 +1,10 @@
 /*
  * @Author: yangkui.zhang
  * @Date: 2023-12-22 16:45:37
- * @LastEditTime: 2024-04-28 10:34:57
+ * @LastEditTime: 2024-11-28 10:51:36
  * @LastEditors: yangkui.zhang
  * @Description: 
- * @FilePath: \ASR160X\simcom\userspace\sc_demo_v2\src\demo_gpio.c
+ * @FilePath: \ASR1803S\simcom\userspace\sc_demo\V2\src\demo_gpio.c
  * no error,no warning
  */
 #include <stdio.h>
